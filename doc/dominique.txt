@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 Modifico file con add, commit e push
+=======
+ciao
+>>>>>>> baee03ebfce0934c8c35471ff64c4a6638d883a2
 
