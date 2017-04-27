@@ -12,4 +12,3 @@ $db_name = "nome_database";
 // altre configurazioni se necessarie o utili ma che siano segrete
 
 // non inserire nulla dopo questa riga!
-?>

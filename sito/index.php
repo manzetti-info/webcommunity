@@ -1,7 +1,7 @@
 <?php
 
-require "./lib/Database.php";
-require "./lib/Auth.php";
+require "./etc/lib/Database.php";
+require "./etc/lib/Auth.php";
 
 echo "<pre>";
 
