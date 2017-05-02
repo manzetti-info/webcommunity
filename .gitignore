@@ -1,5 +1,6 @@
 #inserire i file da ignorare
 secret.php
+# copie bk emacs TODO: verificare e modificare.
 #*#
 .#*
 *~
