@@ -39,7 +39,7 @@ CREATE TABLE Eventi(
 	FKCategoria int,
 	FKUtente int,
 	FKLuogo int,
-	Titolo varchar(30),
+	Titolo varchar(100),
 	Data date,
 	FOREIGN KEY (FKCategoria) REFERENCES Categorie(IDCategoria),
 	FOREIGN KEY (FKUtente) REFERENCES Utenti(IDUtente),
