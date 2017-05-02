@@ -9,7 +9,7 @@
 						<link rel="stylesheet" href="/css/style.css" >
 						<link href="css/bootstrap.min.css" rel="stylesheet">
 						
-						<link rel="shortcut icon" href="webcommunity.png"/>  
+						<link rel="shortcut icon" href="/../immagini/webcommunity.png"/>  
 						<title> Web Community Ciccio </title>
 						
 					
@@ -114,7 +114,7 @@
 	function get_eventi()
 	{
 		return'
-			<p align="center"> <img src="lavori_in_corso.png"> </p>
+			<p align="center"> <img src="/../immagini/lavori_in_corso.png"> </p>
 		';
 	}
 
