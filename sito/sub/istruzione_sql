@@ -1,0 +1,59 @@
+insert into Utenti(IDUtente, Nick, Nome, Cognome, Address, Email, Pass, FKLuogo) values 
+(1,"m.rossi","Mario","Rossi", "Via Torino", "m.rossi@gmail.com","passwd",3),
+(2,"a.bianchi","Andrea","Bianchi", "Via Porta", "a.bianchi@gmail.com","passwdcriptata",4),
+(3,"franco.neri","Franco","Neri", "Via Roma", "f.neri@gmail.com","pass",2),
+(4,"marco.verdi","Marco","Verdi", "Via Edelweiss", "marco.verdi@gmail.com","passwdmarco",1);
+
+insert into Artisti(IDArtista, Denominazione) values 
+(1,"Cantante"),
+(2,"Comico"),
+(3,"Ballerino"),
+(4,"Mago");
+
+insert into Eventi(IDEvento,FKCategoria,FKUtente,FKLuogo,Titolo,Data) values 
+(1,1,2,3,"Concerto Franchino",16/01/2017),
+(2,2,1,4,"Spettacolo di Aldo,Giovanni e Giacomo",19/02/2017),
+(3,4,4,3,"Esibizione Bolle",1/03/2017),
+(4,3,3,4,"Esibizione Mago Silvan",11/03/2017); 
+
+insert into Categorie(IDCategoria, Descrizione) values 
+(1,"Concerto"),
+(2,"Teatro"),
+(3,"Danza"),
+(4,"Spettacolo");
+
+insert into Luoghi(IDLuogo, Nome, FKProvincia) values 
+(1,"Aosta","AO"),
+(2,"Torino","TO"),
+(3,"Milano","MI"),
+(4,"Roma","RO"),
+(5,"Napoli","NA");
+
+insert into Province(IDProvincia, Nome) values 
+("AO","Aosta"),
+("Roma","Roma"),
+("TO","Torino"),
+("MI","Milano"),
+("NA","Napoli");
+
+insert into Commenti(FKEvento,FKUtente, Post, Pdata, Voto) values 
+(1,2,"Grandissima serata in compagnia della musica del nostro Franchino",17/01/2017,8),
+(2,1,"Grandi risate con il trio comico più famoso d'Italia",21/02/2017,9),
+(3,3,"Grande esibizione di Bolle",4/03/2017,7),
+(4,4,"Non benissimo",12/03/2017,5);
+
+insert into Preferenze(FKUtente,FKCategoria) values 
+(1,2),
+(2,1),
+(4,3),
+(3,4);
+
+insert into Partecipanti(FKEvento,FKArtista) values 
+(1,1),
+(2,2),
+(3,3),
+(4,4);
+
+
+
+
