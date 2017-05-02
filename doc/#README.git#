@@ -1,7 +1,0 @@
-Inserire i comandi git utili e le proprie esperienze in merito al sistema.
-[Dopo Modifica]
-
-      $ git pull origin master
-      $ git add .
-      $ git commit -m "Creato rile README"
-      $ git push origin master
