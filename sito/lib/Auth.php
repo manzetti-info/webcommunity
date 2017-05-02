@@ -22,21 +22,21 @@ class Auth
     
     public function login($email, $password)
     {
-        $result = $this->db->select("email, password", "users")->getArray(MYSQL_ASSOC);
+        $result = $this->db->select("Email, Pass", "Utenti")->getArray(MYSQL_ASSOC);
         if ($result !== FALSE)
         {
             foreach ($result as $user)
             {
-                if ($user["email"] == $email)
+                if ($user["Email"] == $email)
                 {
-                    if ($user["password"] == $password)
+                    if ($user["Pass"] == $password)
                     {
                         echo "Login effettuato";
-                        $token = md5($this->db->select("id", "users")->where("email = '" . $email . '"')->getArray(MYSQLI_NUM)[0] . uniqid() . time());
-                        $this->db->update("users", "token = '". $token . "'")->execute();
+                        $token = md5($this->db->select("id", "Utenti")->where("Email = '" . $email . '"')->getArray(MYSQLI_NUM)[0] . uniqid() . time());
+                        $this->db->update("Utenti", "Token = '". $token . "'")->execute();
                         if ($this->session)
                         {
-                            $_SESSION["token"] = $token;
+                            $_SESSION["Token"] = $token;
                         }
                         return;
                     }
@@ -66,15 +66,15 @@ class Auth
     public function register($email, $password)
     {
         $cred = $email . ", " . $password;
-        $result = $this->db->insert("users", "email, password", $cred)->execute();
+        $result = $this->db->insert("Utenti", "Email, Pass", $cred)->execute();
         if ($result !== FALSE)
         {
             echo "Utente registrato";
-            $token = md5($this->db->select("id", "users")->where("email = '" . $email . '"')->getArray(MYSQLI_NUM)[0] . uniqid() . time());
-            $this->db->update("users", "token = '". $token . "'")->execute();
+            $token = md5($this->db->select("id", "Utenti")->where("Email = '" . $email . '"')->getArray(MYSQLI_NUM)[0] . uniqid() . time());
+            $this->db->update("Utenti", "Token = '". $token . "'")->execute();
             if ($this->session)
             {
-                $_SESSION["token"] = $token;
+                $_SESSION["Token"] = $token;
             }
             return;
         }
