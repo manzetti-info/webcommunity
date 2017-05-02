@@ -2,25 +2,51 @@ insert into Utenti(IDUtente, Nick, Nome, Cognome, Address, Email, Pass, FKLuogo)
 (1,"m.rossi","Mario","Rossi", "Via Torino", "m.rossi@gmail.com","passwd",3),
 (2,"a.bianchi","Andrea","Bianchi", "Via Porta", "a.bianchi@gmail.com","passwdcriptata",4),
 (3,"franco.neri","Franco","Neri", "Via Roma", "f.neri@gmail.com","pass",2),
-(4,"marco.verdi","Marco","Verdi", "Via Edelweiss", "marco.verdi@gmail.com","passwdmarco",1);
+(4,"marco.verdi","Marco","Verdi", "Via Edelweiss", "marco.verdi@gmail.com","passwdmarco",1),
+(5,"gianni.verdi","Gianni","Verdi", "Via DalleBalle", "g.verdi@gmail.com","passGiann",8),
+(6,"g.drigo","Gianni","Drigo", "Via S.Pierre", "g.drigo@gmail.com","passwDri",1),
+(7,"dome.sab","Domenico","Sabato", "Via Sacchi", "d.saba@gmail.com","pDoM",6),
+(8,"r.pusc","Roberto","Puscheddu", "Via Delle Palme", "r.pusche@gmail.com","passwRPUS",7);
+
 
 insert into Artisti(IDArtista, Denominazione) values 
 (1,"Cantante"),
 (2,"Comico"),
 (3,"Ballerino"),
-(4,"Mago");
+(4,"Mago"),
+(5,"Pittore"),
+(6,"Scrittore"),
+(7,"Freestyler"),
+(8,"Scultore");
+
+
+
+
 
 insert into Eventi(IDEvento,FKCategoria,FKUtente,FKLuogo,Titolo,Data) values 
 (1,1,2,3,"Concerto Franchino",16/01/2017),
 (2,2,1,4,"Spettacolo di Aldo,Giovanni e Giacomo",19/02/2017),
 (3,4,4,3,"Esibizione Bolle",1/03/2017),
-(4,3,3,4,"Esibizione Mago Silvan",11/03/2017); 
+(4,3,3,4,"Esibizione Mago Silvan",11/03/2017),
+(5,5,6,2,"Freestyle col pallone", 01/04/2017),
+(6,7,8,4,"Scultura in live", 06/05/2017),
+(7,6,7,5,"Esposizione quadri", 01/02/2017),
+(8,4,5,2,"Cabaret", 12/07/2017);
+
+
+
 
 insert into Categorie(IDCategoria, Descrizione) values 
 (1,"Concerto"),
 (2,"Teatro"),
 (3,"Danza"),
-(4,"Spettacolo");
+(4,"Spettacolo"),
+(5,"Freestyle"),
+(6,"Disegno"),
+(7,"Scultura"),
+(8,"Scrittura");
+
+
 
 insert into Luoghi(IDLuogo, Nome, FKProvincia) values 
 (1,"Aosta","AO"),
@@ -28,31 +54,46 @@ insert into Luoghi(IDLuogo, Nome, FKProvincia) values
 (3,"Milano","MI"),
 (4,"Roma","RO"),
 (5,"Napoli","NA");
+(6,"Novara","NO");
+(7,"Bolzano", "BZ");
+(8, "Cagliari", "CA");
 
 insert into Province(IDProvincia, Nome) values 
 ("AO","Aosta"),
 ("Roma","Roma"),
 ("TO","Torino"),
 ("MI","Milano"),
-("NA","Napoli");
+("NA","Napoli"),
+("NO","Novara"),
+("BZ","Bolzano"),
+("CA","Cagliari");
 
 insert into Commenti(FKEvento,FKUtente, Post, Pdata, Voto) values 
 (1,2,"Grandissima serata in compagnia della musica del nostro Franchino",17/01/2017,8),
 (2,1,"Grandi risate con il trio comico più famoso d'Italia",21/02/2017,9),
 (3,3,"Grande esibizione di Bolle",4/03/2017,7),
-(4,4,"Non benissimo",12/03/2017,5);
+(4,4,"Non benissimo",12/03/2017,5),
+(5,6,"Grande talento",01/04/2017,9);
 
 insert into Preferenze(FKUtente,FKCategoria) values 
 (1,2),
 (2,1),
 (4,3),
-(3,4);
+(3,4),
+(5,6),
+(6,5),
+(7,8),
+(8,7);
 
 insert into Partecipanti(FKEvento,FKArtista) values 
 (1,1),
 (2,2),
 (3,3),
-(4,4);
+(4,4),
+(5,5),
+(6,8),
+(7,6),
+(8,2);
 
 
 
