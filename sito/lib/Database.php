@@ -7,7 +7,7 @@ class Database
     
     public function __construct()
     {
-        require "../config.php";
+        require "../etc/config.php";
         $this->db = new mysqli($db_host, $db_user, $db_pass, $db_name);
         if ($this->db->errno)
         {
