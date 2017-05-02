@@ -1,8 +1,9 @@
 <?php
 
 	include ("sub/functions.php");
-	get_head_page();
-	get_home();
-	get_end_page();
-	
+	$page = "";
+	$page .= get_head_page();
+	$page .= get_home();
+	$page .= get_end_page();
+	echo $page;
 ?>
