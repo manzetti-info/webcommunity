@@ -1,5 +1,0 @@
-ciao
-mondo
-utilizzo la add
-poi commit -m
-poi la push

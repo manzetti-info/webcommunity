@@ -53,9 +53,9 @@ insert into Luoghi(IDLuogo, Nome, FKProvincia) values
 (2,"Torino","TO"),
 (3,"Milano","MI"),
 (4,"Roma","RO"),
-(5,"Napoli","NA");
-(6,"Novara","NO");
-(7,"Bolzano", "BZ");
+(5,"Napoli","NA"),
+(6,"Novara","NO"),
+(7,"Bolzano", "BZ"),
 (8, "Cagliari", "CA");
 
 insert into Province(IDProvincia, Nome) values 
@@ -70,7 +70,7 @@ insert into Province(IDProvincia, Nome) values
 
 insert into Commenti(FKEvento,FKUtente, Post, Pdata, Voto) values 
 (1,2,"Grandissima serata in compagnia della musica del nostro Franchino",17/01/2017,8),
-(2,1,"Grandi risate con il trio comico più famoso d'Italia",21/02/2017,9),
+(2,1,"Grandi risate con il trio comico piÃ¹ famoso d'Italia",21/02/2017,9),
 (3,3,"Grande esibizione di Bolle",4/03/2017,7),
 (4,4,"Non benissimo",12/03/2017,5),
 (5,6,"Grande talento",01/04/2017,9);
