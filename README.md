@@ -8,6 +8,10 @@ Web Community: Tema d'esame 2015 Informatica
 
 Esempio di funzionamento del software.
 
+```php
+$prova = new Prova();
+	```
+
 ## Installazione
 
 Istruzioni per l'installazione
