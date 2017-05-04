@@ -1,14 +1,14 @@
 <?php
 	function get_head_page() //layout delle pagine del sito contenetne il menu di navigazione
 	{
-		echo '
+		return '
 			<!DOCTYPE html>
 				<html>
 					<head>
 						<link rel="stylesheet" href="css/bootstrap.min.css" >
 						<link href="css/bootstrap.min.css" rel="stylesheet">
 						
-						<link rel="shortcut icon" href="webcommunity.png"/>  
+						<link rel="shortcut icon" href="./immagini/webcommunity.png"/>  
 						<title> Web Community Ciccio </title>
 						
 					
@@ -35,7 +35,7 @@
 	
 	function get_login()
 	{
-		echo'
+		return'
 			<h1> <span class="glyphicon glyphicon-user"> Login </span></h1>
 			<form class="form-inline">
 				<input type="text" class="form-control" placeholder="Nickname">
@@ -48,7 +48,7 @@
 	
 	function get_registration()
 	{
-		echo'
+		return'
 			<h1> <span class="glyphicon glyphicon-user"> Registrazione </span></h1>
 			<form>
 			 <fieldset>
@@ -91,7 +91,7 @@
 	
 	function get_home()
 	{
-		echo '
+		return '
 			<h1>Web Community Ciccio</h1>
 					<p> Siamo una web community che permette di condividere dati e commenti relativi a eventi dal vivo di diverse categorie, ad es empio
 						concerti, spettacoli teatrali, balletti, ecc. che si svolgono in Italia.
@@ -112,14 +112,14 @@
 
 	function get_eventi()
 	{
-		echo'
-			<p align="center"> <img src="lavori_in_corso.png"> </p>
+		return'
+			<p align="center"> <img src="./immagini/lavori_in_corso.png"> </p>
 		';
 	}
 
 	function get_end_page()
 	{
-		echo '
+		return '
 					</div>
 				</body>
 			</html>
