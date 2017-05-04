@@ -8,8 +8,11 @@ Web Community: Tema d'esame 2015 Informatica
 
 Esempio di funzionamento del software.
 
+### Classe 'Database.php'
+
 ```php
-$prova = new Prova();
+$db = new Database();
+
 ```
 
 ## Installazione
@@ -22,4 +25,4 @@ Spiegazione funzionamento API (se presenti).
 
 ## Licenza
 
-Licenza GNU GPLv3, [clicca qui](LICENSE) per maggiori informazioni.
+[Licenza](LICENSE) GNU GPLv3
