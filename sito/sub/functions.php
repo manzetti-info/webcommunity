@@ -114,7 +114,7 @@
 	function get_eventi()
 	{
 		return'
-			<p align="center"> <img src="/../immagini/lavori_in_corso.png"> </p>
+			<p align="center"> <img src="../immagini/lavori_in_corso.png"> </p>
 		';
 	}
 
