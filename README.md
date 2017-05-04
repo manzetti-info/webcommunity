@@ -8,7 +8,7 @@ Web Community: Tema d'esame 2015 Informatica
 
 Esempio di funzionamento del software.
 
-### Classe 'Database.php'
+#### Classe 'Database.php'
 
 ```php
 $db = new Database();
