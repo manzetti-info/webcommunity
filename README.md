@@ -19,10 +19,11 @@ Il progetto contiene due librerie:
 
 #### Classe 'Database.php'
 
-Importare la classe dal percorso [lib/Database.php](lib/Database.php)
+Importare la classe dal percorso [lib/Database.php](lib/Database.php) e creare un'istanza di essa.
 ```php
 require('./lib/Database.php')
 
+$db = new Database();
 ```
 
 #### Classe 'Auth.php'
