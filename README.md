@@ -56,7 +56,7 @@ Esempio di utilizzo dei vari metodi:
 /* Questo file PHP si trova in 'sito' */
 ...
 
-$result = $db->select("Email, Pass", "Utenti")->where("Email = 'utente@esempio.it')->getArray(MYSQLI_ASSOC);
+$result = $db->select("Email, Pass", "Utenti")->where("Email = 'utente@esempio.it'")->getArray(MYSQLI_ASSOC);
 // $result[riga][colonna]
 echo $result[0][Email];
 echo $result[0][Pass];
