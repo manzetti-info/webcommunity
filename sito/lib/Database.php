@@ -76,8 +76,8 @@ class Database
     
     public function getError()
     {
-		return $this->db->error;
-	}
+	return $this->db->error;
+    }
     
     public function __toString()
     {
