@@ -68,6 +68,12 @@ class Database
         return $this;
     }
     
+    public function delete($table)
+    {
+        $this->raw_query = "DELETE FROM " . $table;
+        return $this;
+    }
+    
     public function setRawQuery($query)
     {
         $this->raw_query = $query;

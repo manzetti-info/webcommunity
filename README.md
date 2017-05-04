@@ -32,14 +32,15 @@ if (!$db) {
 
 //Database collegato
 ```
-Non è necessario nessun metodo _close()_ poiché il database si chiude in automatico nel distruttore della classe.
 
-##### Metodi
-La classe Database dispone di differenti metodi
+Nella tabella seguente verranno illustrati i metodi presenti nella classe Database.
 
-Metodo | Descrizione | Esempio pratico | Query
------- | ----------- | --------------- | -----
-insert(\$tabella, \$campi, \$valori) | Genera una query di tipo INSERT INTO | ``` $db->insert("Utenti", "Email, Pass", "utente@esempio.it", "webcommunity") ``` | ``` INSERT INTO Utenti (Email, Pass) VALUES ('utente@esempio.it', 'webcommunity') ```
+Metodo | Descrizione | Esempio pratico | Query generata
+------ | ----------- | --------------- | --------------
+``` insert($tabella, $campi, $valori) ``` | Genera una query di tipo INSERT INTO | ``` $db->insert("Utenti", "Email, Pass", "utente@esempio.it", "webcommunity") ``` | ``` INSERT INTO Utenti (Email, Pass) VALUES ('utente@esempio.it', 'webcommunity') ```
+``` select($campi, $tabella) ``` | Genera una query di tipo SELECT FROM | ``` $db->select("Email, Pass", "Utenti"); ``` | ``` SELECT Email, Pass FROM Utenti ```
+
+**NB:** Non è necessario nessun metodo _close()_ poiché il database si chiude in automatico nel distruttore della classe.
 
 #### Classe 'Auth.php'
 
@@ -55,4 +56,5 @@ Spiegazione funzionamento API (se presenti).
 ## Licenza
 
 Il progetto WebCommunity utilizza la [Licenza GNU GPLv3](LICENSE)
+
 
