@@ -39,4 +39,4 @@ Spiegazione funzionamento API (se presenti).
 
 ## Licenza
 
-[Licenza](LICENSE) GNU GPLv3
+[Licenza GNU GPLv3](LICENSE)
