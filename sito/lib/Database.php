@@ -74,6 +74,11 @@ class Database
         return $this->raw_query;
     }
     
+    public function getError()
+    {
+		return $this->db->error;
+	}
+    
     public function __toString()
     {
         return $this->db;
