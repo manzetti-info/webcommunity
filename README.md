@@ -19,12 +19,28 @@ Il progetto contiene due librerie:
 
 #### Classe 'Database.php'
 
-Importare la classe dal percorso [lib/Database.php](lib/Database.php) e creare un'istanza di essa.
+Per iniziare, importare la classe, creare un'istanza di essa e controllare se il Database è stato avviato con successo.
 ```php
+/* Questo file PHP si trova in 'sito' */
 require('./lib/Database.php')
 
 $db = new Database();
+if (!$db) {
+	// Errore nella connessione, database non collegato
+	echo $db->getError();
+}
+
+//Database collegato
 ```
+
+Nella tabella seguente verranno illustrati i metodi presenti nella classe Database.
+
+Metodo | Descrizione | Esempio pratico | Query generata
+------ | ----------- | --------------- | --------------
+``` insert($tabella, $campi, $valori) ``` | Genera una query di tipo INSERT INTO | ``` $db->insert("Utenti", "Email, Pass", "utente@esempio.it", "webcommunity") ``` | ``` INSERT INTO Utenti (Email, Pass) VALUES ('utente@esempio.it', 'webcommunity') ```
+``` select($campi, $tabella) ``` | Genera una query di tipo SELECT FROM | ``` $db->select("Email, Pass", "Utenti"); ``` | ``` SELECT Email, Pass FROM Utenti ```
+
+**NB:** Non è necessario nessun metodo _close()_ poiché il database si chiude in automatico nel distruttore della classe.
 
 #### Classe 'Auth.php'
 
@@ -39,4 +55,6 @@ Spiegazione funzionamento API (se presenti).
 
 ## Licenza
 
-[Licenza GNU GPLv3](LICENSE)
+Il progetto WebCommunity utilizza la [Licenza GNU GPLv3](LICENSE)
+
+
