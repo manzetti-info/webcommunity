@@ -40,18 +40,6 @@ class Database
         return $buffer;
     }
     
-    public function o($condition)
-    {
-        $this->raw_query .= " OR " . $condition;
-        return $this;
-    }
-    
-    public function a($condition)
-    {
-        $this->raw_query .= " AND " . $condition;
-        return $this;
-    }
-    
     public function where($condition)
     {
         $this->raw_query .= " WHERE " . $condition;
