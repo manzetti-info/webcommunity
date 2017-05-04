@@ -39,13 +39,17 @@ Metodo | Descrizione | Esempio pratico | Query generata
 ------ | ----------- | --------------- | --------------
 ``` insert($tabella, $campi, $valori) ``` | Genera una query di tipo INSERT INTO | ``` $db->insert("Utenti", "Email, Pass", "utente@esempio.it", "webcommunity") ``` | ``` INSERT INTO Utenti (Email, Pass) VALUES ('utente@esempio.it', 'webcommunity') ```
 ``` select($campi, $tabella) ``` | Genera una query di tipo SELECT FROM | ``` $db->select("Email, Pass", "Utenti"); ``` | ``` SELECT Email, Pass FROM Utenti ```
+``` update($tabella, $campi) ``` | Genera una query di tipo UPDATE SET | ``` $db->update("Utenti", "Email = 'utente@esempio.it'); ``` | ``` UDPATE Utenti SET Email = 'utente@esempio.it' ```
+``` delete($tabella) ``` | Genera una query di tipo DELETE FROM | ``` $db->delete("Utenti"); ``` | ``` DELETE FROM Utenti ```
+``` where($condizione) ``` | Concatena ad una query la clausola WHERE | ``` $db->delete("Utenti")->where("Email = 'utente@esempio.it'"); ``` | ``` DELETE FROM Utenti WHERE Email = 'utente@esempio.it' ```
 
 **NB:** Non è necessario nessun metodo _close()_ poiché il database si chiude in automatico nel distruttore della classe.
 
 #### Classe 'Auth.php'
 
 
-## Installazione
+## Install
+azione
 
 Istruzioni per l'installazione
 

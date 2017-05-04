@@ -1,0 +1,36 @@
+Istruzione per mysql
+
+--Accedere a mysql
+mysql -u root -p
+
+-- Creare il database
+CREATE DATABASE nome_db;
+
+GRANT ALL PRIVILEGES ON nome_db.*
+TO nome_utente@localhost
+IDENTIFED BY 'PSWD'
+WITH GRANT OPTION;
+
+-- Utente che si collega al database
+mysql -u nome_utente -p
+
+exit;
+
+-- Ripristinare il database da una copia
+mysql --database=nome_db -u nome_utente -p < file_dump.sql
+
+
+
+-- Come creare una copia di backup
+mysqldump -u nome_utente -p nome_db > file_dump.sql
+
+
+
+-- Comando sql che permette di popolare una tabella del database estrapolando i dati da un file
+LOAD DATA LOCAL INFILE 'percorso_file'
+REPLACE 
+INTO TABLE nome_tabella
+FIELDS TERMINATED BY ';'
+-- ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+(nome_campo1, nome_campo2, nome_campo3...);
