@@ -13,12 +13,15 @@ La struttura del progetto è la seguente:
 
 ## Esempi di Codice
 
+Il progetto contiene due librerie:
+- **Database.php** che contiene la classe _Database_ per la gestione del database.
+- **Auth.php** che contiene la class _Auth_ utile per autenticare facilmente gli utenti.
 
 #### Classe 'Database.php'
 
 Importare la classe dal percorso [lib/Database.php](lib/Database.php)
 ```php
-require('
+require('./lib/Database.php')
 
 ```
 
