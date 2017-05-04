@@ -39,7 +39,7 @@ La classe Database dispone di differenti metodi
 
 Metodo | Descrizione | Esempio pratico | Query
 ------ | ----------- | --------------- | -----
-insert(\$tabella, \$campi, \$valori) | Genera una query di tipo INSERT INTO | ``` $db->insert("Utenti", "Email, Pass", "utente@esempio.it", "webcommunity") ``` | INSERT INTO Utenti (Email, Pass) VALUES ('utente@esempio.it', 'webcommunity')
+insert(\$tabella, \$campi, \$valori) | Genera una query di tipo INSERT INTO | $db->insert("Utenti", "Email, Pass", "utente@esempio.it", "webcommunity") | INSERT INTO Utenti (Email, Pass) VALUES ('utente@esempio.it', 'webcommunity')
 
 #### Classe 'Auth.php'
 
