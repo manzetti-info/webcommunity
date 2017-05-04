@@ -5,8 +5,7 @@
 			<!DOCTYPE html>
 				<html>
 					<head>
-						<link rel="stylesheet" href="/css/bootstrap.min.css" >
-						<link rel="stylesheet" href="/css/style.css" >
+						<link rel="stylesheet" href="css/bootstrap.min.css" >
 						<link href="css/bootstrap.min.css" rel="stylesheet">
 						
 						<link rel="shortcut icon" href="webcommunity.png"/>  
@@ -16,7 +15,7 @@
 					</head>
 						<body>
 							<div class="container" >
-								<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+								<script src="js/jquery.min.js"></script>
 								<script src="js/bootstrap.min.js"></script>
 							
 							
