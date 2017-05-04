@@ -40,18 +40,6 @@ class Database
         return $buffer;
     }
     
-    public function o($condition)
-    {
-        $this->raw_query .= " OR " . $condition;
-        return $this;
-    }
-    
-    public function a($condition)
-    {
-        $this->raw_query .= " AND " . $condition;
-        return $this;
-    }
-    
     public function where($condition)
     {
         $this->raw_query .= " WHERE " . $condition;
@@ -76,11 +64,6 @@ class Database
         return $this;
     }
     
-    public function getDatabase()
-    {
-        return $this->db;
-    }
-    
     public function setRawQuery($query)
     {
         $this->raw_query = $query;
@@ -89,6 +72,11 @@ class Database
     public function getRawQuery()
     {
         return $this->raw_query;
+    }
+    
+    public function __toString()
+    {
+        return $this->db;
     }
     
     private function stringify($arg)

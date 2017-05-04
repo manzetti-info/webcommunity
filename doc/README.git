@@ -1,0 +1,17 @@
+Inserire i comandi git utili e le proprie esperienze in merito al sistema.
+[Dopo Modifica]
+Quando si modifica un file e si vuole pubblicare la modifica eseguire:
+
+      $ git pull origin master
+      $ git add .
+      $ git commit -m "Creato rile README"
+      $ git push origin master
+
+[Git ignore]
+Inserire le info in merito a questo aspetto
+
+[cancellare un file]
+
+$ git rm sito/etc/secret_pub.php~
+	    
+
