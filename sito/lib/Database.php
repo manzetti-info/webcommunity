@@ -35,7 +35,7 @@ class Database
     {
         $buffer = array();
         $result = $this->execute();
-        if (!$result)
+			if (!$result)
             return null;
         while ($row = $result->fetch_array($fetch_type))
         {
@@ -86,7 +86,7 @@ class Database
     
     public function getError()
     {
-	return $this->db->error;
+		return $this->db->error;
     }
     
     public function __toString()
