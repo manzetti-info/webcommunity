@@ -24,7 +24,11 @@ class Database
     
     public function execute()
     {
-        return $this->db->query($this->raw_query);
+        if ($result = $this->db->query($this->raw_query))
+        {
+			return $result;
+		}
+		return null;
     }
     
     public function getArray($fetch_type)
