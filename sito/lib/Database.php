@@ -9,7 +9,7 @@ class Database
     {
         require "../etc/config.php";
         $this->db = new mysqli($db_host, $db_user, $db_pass, $db_name);
-        if ($this->db->errno)
+        if ($this->db->connect_errno)
         {
             echo "Errore di connessione: " . $this->db->error;
             $this->db = null;
