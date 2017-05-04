@@ -10,7 +10,7 @@ Esempio di funzionamento del software.
 
 ```php
 $prova = new Prova();
-	```
+```
 
 ## Installazione
 
