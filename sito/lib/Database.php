@@ -76,11 +76,6 @@ class Database
         return $this;
     }
     
-    public function getDatabase()
-    {
-        return $this->db;
-    }
-    
     public function setRawQuery($query)
     {
         $this->raw_query = $query;
@@ -89,6 +84,11 @@ class Database
     public function getRawQuery()
     {
         return $this->raw_query;
+    }
+    
+    public function __toString()
+    {
+        return $this->db;
     }
     
     private function stringify($arg)
