@@ -31,6 +31,7 @@ if (!$db) {
 }
 
 //Database collegato
+...
 ```
 
 Nella tabella seguente verranno illustrati i metodi presenti nella classe Database.
@@ -49,6 +50,17 @@ Metodo | Descrizione | Esempio pratico | Query o risultato generato
 ``` getError() ``` | Restituisce l'errore di connessione, in caso ce ne sia uno. | ``` if ($db->getError()) echo $db->getError() ``` | ``` N/D ```
 
 **NB:** Non è necessario nessun metodo _close()_ poiché il database si chiude in automatico nel distruttore della classe.
+
+Esempio di utilizzo dei vari metodi:
+```php
+/* Questo file PHP si trova in 'sito' */
+...
+
+$result = $db->select("Email, Pass", "Utenti")->where("Email = 'utente@esempio.it')->getArray(MYSQLI_ASSOC);
+// $result[riga][colonna]
+echo $result[0][Email];
+echo $result[0][Pass];
+```
 
 #### Classe 'Auth.php'
 
