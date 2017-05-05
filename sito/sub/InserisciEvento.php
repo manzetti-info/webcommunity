@@ -1,14 +1,13 @@
 <?php
-include ('conf.php');
-include ('lib/db.php');
-	global $mysqli, $db_host, $db_user, $db_pass, $db_name;
-	$mysqli = new mysqli($db_host, $db_user, $db_pass, $db_name);
-	if($mysqli->connect_errno) {
-		echo "Errore connessione al database $db_name: " . $mysqli->connect_error;
-	}else {
-		//echo "Connesso";
-	}
-		//echo get_select_list('select nome, descrizione from pagina', "inglese", 'categoria');
+include ('../etc/config.php');
+include ('../lib/Database.php');
+include ('./functions.php');
+
+$db = new Database();
+if (!$db) {
+	echo $db->getError();
+}
+
 ?>
 <html>
 	<head><title>Login</title></head>
@@ -19,7 +18,7 @@ include ('lib/db.php');
 	Ora:<input name="Ora"><br>
 	Categoria:
 	<?php
-		echo get_select_list('select IDCategoria, Descrizione from Categorie', "Concerto", 'Categoria');
+		echo get_select_list('select IDCategoria, Descrizione from Categorie', "Figa", 'Categoria');
 	?>
 	<br>
 	Provincia:
@@ -44,15 +43,35 @@ include ('lib/db.php');
 	<?php
 		if (!empty($_POST))
 		{
-			$data=$_POST['Data'];
+			/*$data=$_POST['Data'];
 			$ora=$_POST['Ora'];
 			$categoria=$_POST['Categoria'];
 			$provincia=$_POST['Provincia'];
 			$luogo=$_POST['Luogo'];
 			$titolo=$_POST['Titolo'];
-			$artista=$_POST['Artista'];
-			//$sql = "INSERT INTO Eventi (Titolo, Data, FKCategoria, FKLuogo, Ora, Provincia, Artista) VALUES ('".$titolo."', '".$data."', ".$categoria.", ".$luogo.", '".$ora."', '".$provincia."', ".$artista."); ";
-			$sql = "INSERT INTO Eventi (Titolo, Data, FKCategoria, FKLuogo) VALUES ('".$titolo."', '".$data."', ".$categoria.", ".$luogo."); ";
+			$artista=$_POST['Artista'];*/
+			
+		$data = $ora =$categoria = $provincia = $luogo = $titolo = $artista = $utebte ="";
+
+		function test_input($data) {
+		  $data = trim($data);
+		  $data = stripslashes($data);
+		  $data = htmlspecialchars($data);
+		  return $data;
+		}
+		
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		  $data = test_input($_POST["Data"]);
+		  $ora = test_input($_POST["Ora"]);
+		  $categoria = test_input($_POST["Categoria"]);
+		  $provincia = test_input($_POST["Provincia"]);
+		  $luogo = test_input($_POST["Luogo"]);
+		  $titolo = test_input($_POST["Titolo"]);
+		  $artista = test_input($_POST["Artista"]);
+		}
+
+			$sql = "INSERT INTO Eventi (Titolo, Data, FKCategoria, FKLuogo, Ora, Provincia, Artista) VALUES ('".$titolo."', '".$data."', ".$categoria.", ".$luogo.", '".$ora."', '".$provincia."', ".$artista."); ";
+			//$sql = "INSERT INTO Eventi (Titolo, Data, FKCategoria, FKLuogo) VALUES ('".$titolo."', '".$data."', ".$categoria.", ".$luogo."); ";
 			echo $sql;
 			echo "<br>--------- <br>";
 			$ris=$mysqli->query($sql) or die ("Query fallita!"); // Eseguo la query*/
