@@ -47,7 +47,7 @@ Metodo | Descrizione | Esempio pratico | Query o risultato generato
 ``` getRawQuery() ``` | Restituisce la query generata dai metodi sopracitati  (non la esegue, ritorna una stringa). | ``` $db->getRawQuery() ``` | Ipotizziamo che abbiamo eseguito il metodo setRawQuery() nell'esempio precedente: ``` SELECT Email, Pass FROM Utenti ```
 ``` execute() ``` | Esegue le query generate con i metodi sopracitati. Restituisce l'oggetto query della classe MySQLI oppure null in caso di errore. | ``` $result = $db->select("Email, Pass", "Utenti")->execute() ``` | 'Oggetto [mysqli_result](http://php.net/manual/en/class.mysqli-result.php)' oppure 'null'
 ``` getArray($tipo_di_fetch) ``` | Trasforma il risultato di una query in un array. Il tipo di array è determinato dall'argomento della funzione (MYSQLI_ASSOC -> Associativo; MYSQLI_NUM -> Indici numerici; MYSQLI_BOTH -> Entrambi) | ``` $result = $db->select("Email, Pass", "Utenti")->getArray(MYSQLI_ASSOC) ``` | 'Un array bidimensionale dove il primo indice indica la riga e il secondo la colonna (Es. ``` $result[0]["Email] ```)' oppure 'null'
-``` getError() ``` | Restituisce l'errore di connessione, in caso ce ne sia uno. | ``` if ($db->getError()) echo $db->getError() ``` | ``` N/D ```
+``` getError() ``` | Restituisce l'errore di connessione, in caso ce ne sia uno. | ``` if ($db->getError()) echo $db->getError() ``` | ``` Il messaggio di errore ```
 
 **NB:** Non è necessario nessun metodo _close()_ poiché il database si chiude in automatico nel distruttore della classe.
 
