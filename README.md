@@ -21,7 +21,7 @@ Il progetto contiene due librerie:
 
 Per iniziare, importare la classe, creare un'istanza di essa e controllare se il Database è stato avviato con successo.
 ```php
-/* Questo file PHP si trova in 'sito' */
+/* Ipotizziamo che questo file PHP si trovi in 'sito' */
 require('./lib/Database.php')
 
 $db = new Database();
@@ -31,25 +31,51 @@ if (!$db) {
 }
 
 //Database collegato
+...
 ```
 
 Nella tabella seguente verranno illustrati i metodi presenti nella classe Database.
 
-Metodo | Descrizione | Esempio pratico | Query generata
------- | ----------- | --------------- | --------------
+Metodo | Descrizione | Esempio pratico | Query o risultato generato
+------ | ----------- | --------------- | --------------------------
+``` connect() ``` | Metodo eseguito nel costruttore, connette lo script al database grazie alle variabili passate nel file _config.php_ situato in _etc/_ (``` $db_host ```, ``` $db_user ```, ``` $db_pass ```, ``` $db_name ```) | ``` $db->connect() ``` | ``` Stampa un messaggio di errore in caso di connessione fallita. ```
 ``` insert($tabella, $campi, $valori) ``` | Genera una query di tipo INSERT INTO | ``` $db->insert("Utenti", "Email, Pass", "utente@esempio.it", "webcommunity") ``` | ``` INSERT INTO Utenti (Email, Pass) VALUES ('utente@esempio.it', 'webcommunity') ```
 ``` select($campi, $tabella) ``` | Genera una query di tipo SELECT FROM | ``` $db->select("Email, Pass", "Utenti"); ``` | ``` SELECT Email, Pass FROM Utenti ```
 ``` update($tabella, $campi) ``` | Genera una query di tipo UPDATE SET | ``` $db->update("Utenti", "Email = 'utente@esempio.it'); ``` | ``` UDPATE Utenti SET Email = 'utente@esempio.it' ```
 ``` delete($tabella) ``` | Genera una query di tipo DELETE FROM | ``` $db->delete("Utenti"); ``` | ``` DELETE FROM Utenti ```
 ``` where($condizione) ``` | Concatena ad una query la clausola WHERE | ``` $db->delete("Utenti")->where("Email = 'utente@esempio.it'"); ``` | ``` DELETE FROM Utenti WHERE Email = 'utente@esempio.it' ```
+``` setRawQuery($query) ``` | Permette di creare una query manualmente | ``` $db->setRawQuery("SELECT Email, Pass FROM Utenti") ``` | ``` SELECT Email, Pass FROM Utenti ```
+``` getRawQuery() ``` | Restituisce la query generata dai metodi sopracitati  (non la esegue, ritorna una stringa). | ``` $db->getRawQuery() ``` | Ipotizzando di aver eseguito il metodo setRawQuery() nell'esempio precedente, il risultato è il seguente: ``` SELECT Email, Pass FROM Utenti ```
+``` execute() ``` | Esegue le query generate con i metodi sopracitati. Restituisce l'oggetto query della classe MySQLI oppure null in caso di errore. | ``` $result = $db->select("Email, Pass", "Utenti")->execute() ``` | 'Oggetto [mysqli_result](http://php.net/manual/en/class.mysqli-result.php)' oppure 'null'
+``` getArray($tipo_di_fetch) ``` | Trasforma il risultato di una query in un array. Il tipo di array è determinato dall'argomento della funzione (MYSQLI_ASSOC -> Associativo; MYSQLI_NUM -> Indici numerici; MYSQLI_BOTH -> Entrambi) | ``` $result = $db->select("Email, Pass", "Utenti")->getArray(MYSQLI_ASSOC) ``` | 'Un array bidimensionale dove il primo indice indica la riga e il secondo la colonna (Es. ``` $result[0]["Email"] ```)' oppure 'null'
+``` getError() ``` | Restituisce l'errore di connessione, in caso ce ne sia uno. | ``` if ($db->getError()) echo $db->getError() ``` | ``` Il messaggio di errore ```
 
 **NB:** Non è necessario nessun metodo _close()_ poiché il database si chiude in automatico nel distruttore della classe.
 
+Esempio di utilizzo dei vari metodi:
+```php
+/* Ipotizziamo che questo file PHP si trovi in 'sito' */
+...
+
+if ($db->insert("Utenti", "Email, Pass", "utente@esempio.it, webcommunity")->execute()) {
+	echo "Utente inserito";
+}
+else {
+	echo "Utente NON inserito";
+}
+
+$result = $db->select("Email, Pass", "Utenti")->where("Email = 'utente@esempio.it'")->getArray(MYSQLI_ASSOC);
+// $result[riga][colonna]
+echo $result[0]["Email"]; // utente@esempio.it
+echo $result[0]["Pass"]; // webcommunity
+```
+
 #### Classe 'Auth.php'
 
+In costruzione...
 
-## Install
-azione
+
+## Installazione
 
 Istruzioni per l'installazione
 
