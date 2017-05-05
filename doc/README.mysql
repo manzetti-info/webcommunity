@@ -8,7 +8,7 @@ CREATE DATABASE nome_db;
 
 GRANT ALL PRIVILEGES ON nome_db.*
 TO nome_utente@localhost
-IDENTIFED BY 'PSWD'
+IDENTIFIED BY 'PSWD'
 WITH GRANT OPTION;
 
 -- Utente che si collega al database
