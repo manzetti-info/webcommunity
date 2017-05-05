@@ -67,11 +67,13 @@ else
 
 $result = $db->select("Email, Pass", "Utenti")->where("Email = 'utente@esempio.it'")->getArray(MYSQLI_ASSOC);
 // $result[riga][colonna]
-echo $result[0]["Email"];
-echo $result[0]["Pass"];
+echo $result[0]["Email"]; // utente@esempio.it
+echo $result[0]["Pass"]; // webcommunity
 ```
 
 #### Classe 'Auth.php'
+
+In costruzione...
 
 
 ## Installazione
