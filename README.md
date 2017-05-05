@@ -60,8 +60,7 @@ Esempio di utilizzo dei vari metodi:
 if ($db->insert("Utenti", "Email, Pass", "utente@esempio.it, webcommunity")->execute()) {
 	echo "Utente inserito";
 }
-else
-{
+else {
 	echo "Utente NON inserito";
 }
 
