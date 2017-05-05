@@ -21,7 +21,7 @@ Il progetto contiene due librerie:
 
 Per iniziare, importare la classe, creare un'istanza di essa e controllare se il Database è stato avviato con successo.
 ```php
-/* Questo file PHP si trova in 'sito' */
+/* Ipotizziamo che questo file PHP si trovi in 'sito' */
 require('./lib/Database.php')
 
 $db = new Database();
@@ -53,7 +53,7 @@ Metodo | Descrizione | Esempio pratico | Query o risultato generato
 
 Esempio di utilizzo dei vari metodi:
 ```php
-/* Questo file PHP si trova in 'sito' */
+/* Ipotizziamo che questo file PHP si trovi in 'sito' */
 ...
 
 $result = $db->select("Email, Pass", "Utenti")->where("Email = 'utente@esempio.it'")->getArray(MYSQLI_ASSOC);
