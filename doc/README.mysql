@@ -27,6 +27,11 @@ mysqldump -u nome_utente -p nome_db > file_dump.sql
 
 
 -- Comando sql che permette di popolare una tabella del database estrapolando i dati da un file
+--Innanzitutto accedere col seguente comando
+mysql -u nome_utente -p --local-infile=1
+
+--In seguito...
+
 LOAD DATA LOCAL INFILE 'percorso_file'
 REPLACE 
 INTO TABLE nome_tabella
