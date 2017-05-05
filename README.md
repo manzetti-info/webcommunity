@@ -38,6 +38,7 @@ Nella tabella seguente verranno illustrati i metodi presenti nella classe Databa
 
 Metodo | Descrizione | Esempio pratico | Query o risultato generato
 ------ | ----------- | --------------- | --------------------------
+``` connect() ``` | Metodo eseguito nel costruttore, connette lo script al database grazie alle variabili passate nel file _config.php_ situato in _etc/_ (``` $db_host ```, ``` $db_user ```, ``` $db_pass ```, ``` $db_name ``` | ``` $db->connect() ``` | ``` Stampa un messaggio di errore in caso di connessione fallita. ```
 ``` insert($tabella, $campi, $valori) ``` | Genera una query di tipo INSERT INTO | ``` $db->insert("Utenti", "Email, Pass", "utente@esempio.it", "webcommunity") ``` | ``` INSERT INTO Utenti (Email, Pass) VALUES ('utente@esempio.it', 'webcommunity') ```
 ``` select($campi, $tabella) ``` | Genera una query di tipo SELECT FROM | ``` $db->select("Email, Pass", "Utenti"); ``` | ``` SELECT Email, Pass FROM Utenti ```
 ``` update($tabella, $campi) ``` | Genera una query di tipo UPDATE SET | ``` $db->update("Utenti", "Email = 'utente@esempio.it'); ``` | ``` UDPATE Utenti SET Email = 'utente@esempio.it' ```

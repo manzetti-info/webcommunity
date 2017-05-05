@@ -8,12 +8,7 @@ class Database
     public function __construct()
     {
         require "../etc/config.php";
-        $this->db = new mysqli($db_host, $db_user, $db_pass, $db_name);
-        if ($this->db->connect_errno)
-        {
-            echo "Errore di connessione: " . $this->db->error;
-            $this->db = null;
-        }
+        $this->connect();
         $this->raw_query = "";
     }
     
@@ -21,6 +16,16 @@ class Database
     {
         $this->db->close();
     }
+    
+    public function connect()
+    {
+		$this->db = new mysqli($db_host, $db_user, $db_pass, $db_name);
+        if ($this->db->connect_errno)
+        {
+            echo "Errore di connessione: " . $this->db->error;
+            $this->db = null;
+        }
+	}
     
     public function execute()
     {
