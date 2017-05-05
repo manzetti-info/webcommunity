@@ -69,11 +69,11 @@ insert into Province(IDProvincia, Nome) values
 ("CA","Cagliari");
 
 insert into Commenti(FKEvento,FKUtente, Post, Pdata, Voto) values 
-(1,2,"Grandissima serata in compagnia della musica del nostro Franchino",17/01/2017,8),
-(2,1,"Grandi risate con il trio comico più famoso d'Italia",21/02/2017,9),
-(3,3,"Grande esibizione di Bolle",4/03/2017,7),
-(4,4,"Non benissimo",12/03/2017,5),
-(5,6,"Grande talento",01/04/2017,9);
+(1,2,"Grandissima serata in compagnia della musica del nostro Franchino",2017-01-17,8),
+(2,1,"Grandi risate con il trio comico più famoso d'Italia",2017-02-21,9),
+(3,3,"Grande esibizione di Bolle",2017-03-4,7),
+(4,4,"Non benissimo",2017-03-12,5),
+(5,6,"Grande talento",2017-04-01,9);
 
 insert into Preferenze(FKUtente,FKCategoria) values 
 (1,2),
