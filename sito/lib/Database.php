@@ -40,11 +40,7 @@ class Database
     {
         $buffer = array();
         $result = $this->execute();
-<<<<<<< HEAD
         if (!$result)
-=======
-		if (!$result)
->>>>>>> 922ad710a881b44b9cd9e187a443fad54793592e
             return null;
         while ($row = $result->fetch_array($fetch_type))
         {
