@@ -7,7 +7,6 @@ class Database
     
     public function __construct()
     {
-        require "../etc/config.php";
         $this->connect();
         $this->raw_query = "";
     }
@@ -19,28 +18,33 @@ class Database
     
     public function connect()
     {
-		$this->db = new mysqli($db_host, $db_user, $db_pass, $db_name);
+        require_once("../etc/config.php");
+        $this->db = new mysqli($db_host, $db_user, $db_pass, $db_name);
         if ($this->db->connect_errno)
         {
             echo "Errore di connessione: " . $this->db->error;
             $this->db = null;
         }
-	}
+    }
     
     public function execute()
     {
         if ($result = $this->db->query($this->raw_query))
         {
-			return $result;
-		}
-		return null;
+            return $result;
+        }
+        return null;
     }
     
     public function getArray($fetch_type)
     {
         $buffer = array();
         $result = $this->execute();
+<<<<<<< HEAD
+        if (!$result)
+=======
 		if (!$result)
+>>>>>>> 922ad710a881b44b9cd9e187a443fad54793592e
             return null;
         while ($row = $result->fetch_array($fetch_type))
         {
@@ -91,7 +95,7 @@ class Database
     
     public function getError()
     {
-		return $this->db->error;
+        return $this->db->error;
     }
     
     public function __toString()
