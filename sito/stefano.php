@@ -1,6 +1,6 @@
 <?php
 	//include ("sub/funzioni_stefano.php");
-	include ("sub/functions.php");
+	//include ("sub/functions.php");
 	include ("etc/config.php");
 	
 	$page = "";

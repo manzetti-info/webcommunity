@@ -139,7 +139,7 @@
 	}
 	
 	function get_voto_medio_eventi(){
-		global $mysqli;
+		//global $mysqli;
 			$ans = "";
 			$sql= "SELECT avg(Voto), Eventi.Titolo AS t, Categorie.Descrizione AS c FROM Commenti
 					LEFT JOIN Eventi ON
@@ -153,7 +153,7 @@
 	}
 
 	function get_eventi_futuri(){
-		global $mysqli;
+		//global $mysqli;
 			$ans = "";
 			$sql= "SELECT Eventi.Data, Eventi.Titolo, Luoghi.Nome, Luoghi.FKProvincia
 					FROM Eventi, Luoghi WHERE Eventi.FKLuogo = Luoghi.IDLuogo
@@ -161,31 +161,4 @@
 					ORDER BY Data;";
 			$ans .= "<h1>Eventi futuri</h1>" . get_html_table_from_query ($sql, 'class="table table-bordered"'); 
 			return $ans;
-	}
-	
-	function get_html_commento($msg){
-		return PHP_EOL. '<!--' . $msg . '-->'. PHP_EOL;
-	}
-
-	function get_select_list($sql, $default, $nome) {
-		global $db;
-		$ans = "";
-		
-		if ($result = $db->setRawQuery($sql)->getArray(MYSQLI_NUM)) {
-			$ans .= '<select name="' . $nome . '">' . PHP_EOL;
-			
-			for ($i = 0; $i < count($result); $i++) {
-				$sel = "";
-				if ($result[$i][1] == $default) {
-					$sel = " selected";
-				}
-				$ans .= '\t<option value="' . $result[$i][0] . '" ' . $sel . '>' . $result[$i][1] . '</option>' . PHP_EOL;
-			}
-			
-			$ans .= '</select>' . PHP_EOL;
-		}
-		else {
-			$ans = get_html_commento("Errore esecuzione query");
-		}
-		return $ans;
 	}
