@@ -49,12 +49,6 @@ class Database
         return $buffer;
     }
     
-    public function where($condition)
-    {
-        $this->raw_query .= " WHERE " . $condition;
-        return $this;
-    }
-    
     public function select($fields, $tables)
     {
         $this->raw_query = "SELECT " . $fields . " FROM " . $tables;
@@ -79,9 +73,22 @@ class Database
         return $this;
     }
     
+    public function where($condition)
+    {
+        $this->raw_query .= " WHERE " . $condition;
+        return $this;
+    }
+
+    public function orderby($fields, $order)
+    {
+        $this->raw_query .= " ORDER BY " . $fields . " " . $condition;
+        return $this;
+    }
+    
     public function setRawQuery($query)
     {
         $this->raw_query = $query;
+        return $this;
     }
     
     public function getRawQuery()
